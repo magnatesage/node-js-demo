@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /home/ubuntu/project/node-js-demo
+
+sudo pm2 start index.js
+sudo pm2 save
