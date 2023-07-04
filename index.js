@@ -4,7 +4,7 @@ const app = express();
 const ip = require("ip");
 
 app.get('/', function (req, res) {
-  res.send(`Hello World : ${ip.address()} | nevil test ec2`)
+  res.send(`Hello World : ${ip.address()} | nevil test ec2 test`)
 })
 
 app.listen(5555)
