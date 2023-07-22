@@ -1,2 +1,2 @@
 #!/bin/bash
-cd /home/ec2-user/project/node-js-demo
+cd /home/ubuntu/project/node-js-demo
