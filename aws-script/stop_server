@@ -1,4 +1,4 @@
 #!/bin/bash
 
-#sudo pm2 stop all
-#sudo apt autoremove
+sudo pm2 stop all
+sudo apt autoremove
