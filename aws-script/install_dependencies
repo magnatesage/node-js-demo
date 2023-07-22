@@ -1,13 +1,2 @@
 #!/bin/bash
-sudo apt update
-sudo apt autoremove
-
-node -v
-npm -v
-yarn --version
-
-cd /home/ubuntu/project/node-js-demo
-
-yarn
-
-sudo pm2 flush
+cd /home/ec2-user/project/node-js-demo
