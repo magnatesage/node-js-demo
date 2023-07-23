@@ -8,6 +8,6 @@ yarn --version
 
 cd /home/ubuntu/project/node-js-demo
 
-yarn
+npm install
 
-sudo pm2 flush
+pm2 flush
