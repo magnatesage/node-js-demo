@@ -2,7 +2,11 @@
 sudo apt update
 sudo apt autoremove
 
-sudo n=$(which node);n=${n%/bin/node}; sudo chmod -R 755 $n/bin/*; sudo cp -r $n/{bin,lib,share} /usr/local
+who -H
+
+whoami
+
+#sudo n=$(which node);n=${n%/bin/node}; sudo chmod -R 755 $n/bin/*; sudo cp -r $n/{bin,lib,share} /usr/local
 
 node -v
 npm -v
