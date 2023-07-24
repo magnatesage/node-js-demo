@@ -4,7 +4,7 @@ const app = express();
 const ip = require("ip");
 
 app.get('/', function (req, res) {
-  res.send(`Hello World : ${ip.address()} | ${new Date()} | Niks Test`)
+  res.send(`Hello World : ${ip.address()} | ${new Date()} | Niks Test | CICD Complete`)
 })
 
 app.listen(5555)
