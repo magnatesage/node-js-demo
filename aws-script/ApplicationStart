@@ -1,10 +1,65 @@
 #!/bin/bash
+
+if type pm2 >/dev/null 2>&1 && which pm2 >/dev/null 2>&1; then
+  echo "PM2 installted"
+else
+  # START UBUNTU USERSPACE
+  echo "==================================="
+  echo "Installing NVM"
+  echo "==================================="
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.9/install.sh | bash
+  echo 'export NVM_DIR="/home/ubuntu/.nvm"' >>/home/ubuntu/.bashrc
+  echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >>/home/ubuntu/.bashrc
+
+  # Dot source the files to ensure that variables are available within the current shell
+  . /home/ubuntu/.nvm/nvm.sh
+  . /home/ubuntu/.profile
+  . /home/ubuntu/.bashrc
+
+  echo "Installing NodeJS 16.20.1"
+  nvm list-remote
+
+  echo "Install Node 16.20.1"
+  nvm install 16.20.1
+  nvm use 16.20.1
+
+  n=$(which node)
+  n=${n%/bin/node}
+  chmod -R 755 $n/bin/*
+  cp -r $n/{bin,lib,share} /usr/local
+  which node
+
+  echo "Check Node Version"
+  node -v
+  echo "Check NPM Version"
+  npm -v
+
+  # Install Yarn
+  echo "==================================="
+  echo "Install Yarn"
+  echo "==================================="
+  npm install --global yarn
+
+  echo "Check Yarn Version"
+  yarn --version
+
+  # Install Pm2
+  echo "==================================="
+  echo "Install PM2"
+  echo "==================================="
+  echo "Installing PM2"
+  npm install pm2@latest -g
+  pm2 startup systemd
+  echo "Check PM2 Version"
+  pm2 --version
+fi
+
 echo "Project Service Start"
-pm2 start /home/ubuntu/project/node-js-demo/index.js
-pm2 list
-pm2 save
+sudo pm2 start /home/ubuntu/project/node-js-demo/index.js
+sudo pm2 list
+sudo pm2 save
 
 # Check Project Service
 echo "Check Project Service"
-pm2 list
+sudo pm2 list
 curl localhost:5555
