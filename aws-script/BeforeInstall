@@ -48,14 +48,6 @@ else
   pm2 startup systemd
   echo "Check PM2 Version"
   pm2 --version
-
-  # Set Node globally
-  echo "Set Node globally"
-  n=$(which node)
-  n=${n%/bin/node}
-  sudo chmod -R 755 $n/bin/*
-  sudo cp -r $n/{bin,lib,share} /usr/local
-  which node
 fi
 
 echo "Check Node Version"
