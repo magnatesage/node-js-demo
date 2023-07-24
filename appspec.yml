@@ -9,24 +9,24 @@ hooks:
   ApplicationStop:
     - location: aws-script/ApplicationStop
       timeout: 300
-      runas: ubuntu
+      runas: root
   DownloadBundle:
     - location: aws-script/DownloadBundle
       timeout: 300
-      runas: ubuntu
+      runas: root
   BeforeInstall:
     - location: aws-script/BeforeInstall
       timeout: 300
-      runas: ubuntu
+      runas: root
   Install:
     - location: aws-script/Install
       timeout: 300
-      runas: ubuntu
+      runas: root
   AfterInstall:
     - location: aws-script/AfterInstall
       timeout: 300
-      runas: ubuntu
+      runas: root
   ApplicationStart:
     - location: aws-script/ApplicationStart
       timeout: 300
-      runas: ubuntu
+      runas: root
