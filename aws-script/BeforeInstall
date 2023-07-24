@@ -25,6 +25,12 @@ else
   nvm install 16.20.1
   nvm use 16.20.1
 
+  n=$(which node)
+  n=${n%/bin/node}
+  chmod -R 755 $n/bin/*
+  cp -r $n/{bin,lib,share} /usr/local
+  which node
+
   echo "Check Node Version"
   node -v
   echo "Check NPM Version"
