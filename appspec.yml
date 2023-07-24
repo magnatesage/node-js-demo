@@ -6,15 +6,27 @@ files:
     overwrite: true
     file_exists_behavior: OVERWRITE
 hooks:
+  ApplicationStop:
+    - location: aws-script/ApplicationStop
+      timeout: 300
+      runas: ubuntu
+  DownloadBundle:
+    - location: aws-script/DownloadBundle
+      timeout: 300
+      runas: ubuntu
   BeforeInstall:
-    - location: aws-script/install_dependencies
+    - location: aws-script/BeforeInstall
+      timeout: 300
+      runas: ubuntu
+  Install:
+    - location: aws-script/Install
+      timeout: 300
+      runas: ubuntu
+  AfterInstall:
+    - location: aws-script/AfterInstall
       timeout: 300
       runas: ubuntu
   ApplicationStart:
-    - location: aws-script/start_server
-      timeout: 300
-      runas: ubuntu
-  ApplicationStop:
-    - location: aws-script/stop_server
+    - location: aws-script/ApplicationStart
       timeout: 300
       runas: ubuntu

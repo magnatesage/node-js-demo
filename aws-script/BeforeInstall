@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Check Node Version"
+node -v
+
+echo "Check NPM Version"
+npm -v
+
+echo "Check Yarn Version"
+yarn --version

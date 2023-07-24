@@ -1,0 +1,8 @@
+#!/bin/bash
+# Check System Update
+echo "Check Current User"
+whoami
+
+echo "Check Syetem update"
+sudo apt update
+sudo apt autoremove

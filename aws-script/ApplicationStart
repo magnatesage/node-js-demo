@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Project Service Start"
+pm2 start index.js
+pm2 list
+pm2 save
+
+# Check Project Service
+echo "Check Project Service"
+pm2 list
+curl localhost:5555
