@@ -1,7 +1,10 @@
 #!/bin/bash
 
-echo "Stop Project App"
+if type pm2 >/dev/null 2>&1 && which pm2 >/dev/null 2>&1; then
+  echo "PM2 is installed"
 
-pm2 stop all
-pm2 delete all
-pm2 flush
+  echo "Stop Project App"
+  pm2 stop all
+  pm2 delete all
+  pm2 flush
+fi
