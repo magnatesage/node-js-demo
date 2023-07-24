@@ -1,9 +1,16 @@
 #!/bin/bash
-echo "Check Node Version"
-node -v
 
-echo "Check NPM Version"
-npm -v
+if type node >/dev/null 2>&1 && which node >/dev/null 2>&1; then
+  echo "node is installed, skipping..."
 
-echo "Check Yarn Version"
-yarn --version
+  echo "Check Node Version"
+  node -v
+
+  echo "Check NPM Version"
+  npm -v
+
+  echo "Check Yarn Version"
+  yarn --version
+else
+  echo "install node"
+fi
